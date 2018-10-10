@@ -642,13 +642,17 @@ function trailWeather(trailName, trailRating, trailDifficulty, trailLength, trai
           "Length: " + trailLength + "</p>" +
           "</div>" +
           "<div class='col-3'>" + trailWeather + 
-          "</div>" + "<div class='fav-button favoriteBtn'>" + "<i class='fas fa-heart btn btn-sm' aria-hidden='false'></i>"+"</div>" +
+          "</div>" + "<div class='fav-button favoriteBtn' onclick='favoritePlace()'>" + "<i class='fas fa-heart btn btn-sm' aria-hidden='false'></i>"+"</div>" +
         "</div>";
 
         
         
-       // Button add all the trails around the area into the database instead of just one at a time.
-        $('.favoriteBtn').on('click', function () 
+      
+        //pushes trail information to results panel   
+        $("#trails").append(resultsString); 
+
+         // Button add all the trails around the area into the database instead of just one at a time.\
+        $('.favoriteBtn').on('click', favoritePlace = function () 
         {
 
           var favoriteTrail = 
@@ -667,11 +671,6 @@ function trailWeather(trailName, trailRating, trailDifficulty, trailLength, trai
           // Logs everything to console
           console.log(favoriteTrail);
         });
-        
-         
-
-        //pushes trail information to results panel   
-        $("#trails").append(resultsString); 
     });  
 }
     
